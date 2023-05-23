@@ -1,13 +1,13 @@
 # Priyank_Portfolio_Angular
 
 # Purpose
-1. Converting html to angular 
-2. Bind angular to .Net
+1. Converting html to angular 16
+2. Integrate .Net webapi in angular 16
 
 # Running project on localhost
 
 1. Clone this project in local environment
-2. install dependency of project by npm install
+2. Install dependency of project by npm install
 3. To run front end enter npm serve command
 4. Open project in visual studio and run the backend
 

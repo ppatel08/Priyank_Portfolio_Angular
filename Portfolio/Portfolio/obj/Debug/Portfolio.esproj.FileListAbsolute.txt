@@ -1,0 +1,2 @@
+D:\Priyank\Priyank_Portfolio_Angular\Portfolio\Portfolio\obj\Debug\Portfolio.esproj.SuggestedBindingRedirects.cache
+D:\Priyank\Priyank_Portfolio_Angular\Portfolio\Portfolio\obj\Debug\Portfolio.esproj.CoreCompileInputs.cache

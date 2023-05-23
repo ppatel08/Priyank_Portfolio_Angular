@@ -1,0 +1,43 @@
+<section id="resume" class="section">
+    <div class="container px-lg-5">
+      <!-- Heading -->
+      <div class="position-relative d-flex text-center mb-5">
+        <h2 class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0">
+          Summary
+        </h2>
+        <p class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0">
+          Resume<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span>
+        </p>
+      </div>
+      <!-- Heading end-->
+
+      <div class="row gx-5">
+       
+        <!-- My Experience -->
+        <div class="col-md-12">
+          <h2 class="text-6 fw-600 mb-4">My Experience</h2>
+          <div class="bg-white border rounded p-4 mb-4" *ngFor="let o of PersonalDetails?.Resume?.Experiences">
+            <p class="badge bg-primary text-2 fw-400">{{o.StartYear}} - {{o.EndYear}}</p>
+            <h3 class="text-5">{{o.JobTitle}}</h3>
+            <p class="text-danger">{{o.CompanyName}}</p>
+            <p class="mb-0">
+             {{o.Description}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- My Skills -->
+      <h2 class="text-6 fw-600 mt-4 mb-4">My Skills</h2>
+      <div class="row gx-5">
+        <div class="col-md-4 skills" *ngFor="let o of PersonalDetails?.Resume?.Skills;let i = index" >
+          <p class="text-dark fw-500 text-start mb-2 bg-white border rounded p-4 mb-4">
+            {{o.Name}}
+          </p>
+        </div>
+      </div>
+      <!-- <div class="text-center mt-5">
+        <a href="#" class="btn btn-outline-secondary rounded-pill shadow-none">Download CV
+          <span class="ms-1"><i class="fas fa-download"></i></span></a>
+      </div> -->
+    </div>
+  </section>

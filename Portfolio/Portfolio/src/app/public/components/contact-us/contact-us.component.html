@@ -1,0 +1,73 @@
+<section id="contact" class="section bg-light">
+    <div class="container px-lg-5">
+      <!-- Heading -->
+      <div class="position-relative d-flex text-center mb-5">
+        <h2 class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0">
+          Contact
+        </h2>
+        <p class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0">
+          Get in Touch<span
+            class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span>
+        </p>
+      </div>
+      <!-- Heading end-->
+      <div class="row gy-5">
+        <div class="col-md-4 col-xl-3 order-1 order-md-0 text-center text-md-start">
+          <h2 class="mb-3 text-5 text-uppercase">Address</h2>
+          <p class="text-3 mb-4">
+           {{PersonalDetails?.UserDetail?.City}},<br />
+           {{PersonalDetails?.UserDetail?.State}} - {{PersonalDetails?.UserDetail?.Zipcode}} 
+          </p>
+          <p class="text-3 mb-1">
+            <a href="{{'tel:'+ PersonalDetails?.UserDetail?.MobileNumber}}"><span class="text-primary text-4 me-2"><i class="fas fa-phone"></i></span>{{PersonalDetails?.UserDetail?.MobileNumber}}</a>
+            
+          </p>
+          <p class="text-3 mb-4">
+            <a [href]="'mailto:'+ PersonalDetails?.UserDetail?.Email">
+            <span class="text-primary text-4 me-2"><i class="fas fa-envelope"></i></span>{{PersonalDetails?.UserDetail?.Email}}</a>
+          </p>
+        </div>
+        <div class="col-md-8 col-xl-9 order-0 order-md-1">
+          <h2 class="mb-3 text-5 text-uppercase text-center text-md-start">
+            Send us a note
+          </h2>
+          <form [formGroup]="contactForm" (ngSubmit)="Send()">
+            <div class="row g-4">
+              <div class="col-xl-6">
+                <input name="name" type="text" class="form-control" required placeholder="Name" formControlName="name"/>
+                <div *ngIf="(contactForm.controls['name']?.touched || isSubmitted) && contactForm.controls['name']?.invalid" class="error-div">
+                    <div *ngIf="contactForm.controls['name'].errors && contactForm.controls['name'].errors['required']"
+                      class="text-danger">Please enter name</div>
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <input name="email" type="email" class="form-control" required placeholder="Email" formControlName="email" />
+                <div *ngIf="(contactForm.controls['email']?.touched || isSubmitted) && contactForm.controls['email']?.invalid" class="error-div">
+                    <div *ngIf="contactForm.controls['email'].errors && contactForm.controls['email'].errors['required']"
+                      class="text-danger">Please enter email address</div>
+                      <div *ngIf="contactForm.controls['email'].errors && contactForm.controls['email'].errors['email']"
+                      class="text-danger">Please enter valid email address</div>
+                </div>
+              </div>
+              <div class="col">
+                <textarea name="form-message" class="form-control" rows="5" required
+                  placeholder="Tell us more about your needs........" formControlName="message"></textarea>
+                  <div *ngIf="(contactForm.controls['message']?.touched || isSubmitted) && contactForm.controls['message']?.invalid" class="error-div">
+                    <div *ngIf="contactForm.controls['message'].errors && contactForm.controls['message'].errors['required']"
+                      class="text-danger">Please enter first name</div>
+                      <div *ngIf="contactForm.controls['message'].errors && contactForm.controls['message'].errors['maxlength']"
+                      class="text-danger"> Max length allowed is {{contactForm.controls['message'].errors['maxlength']?.requiredLength}} </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-center mt-4 mb-0">
+              <button id="submit-btn" class="btn btn-primary rounded-pill d-inline-flex" type="submit">
+                Send Message
+              </button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

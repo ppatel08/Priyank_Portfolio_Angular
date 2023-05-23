@@ -1,0 +1,33 @@
+<section id="portfolio" class="section bg-light">
+    <div class="container px-lg-5">
+      <!-- Heading -->
+      <div class="position-relative d-flex text-center mb-5">
+        <h2 class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0">
+          Portfolio
+        </h2>
+        <p class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0">
+          My Work<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span>
+        </p>
+      </div>
+      <!-- Heading end-->
+      <!-- Filter Menu end -->
+      <div class="portfolio popup-ajax-gallery">
+        <div class="row portfolio-filter g-4">
+          <div class="col-sm-6 col-lg-4 brand" *ngFor="let o of PersonalDetails?.MyWorks">
+            <div class="portfolio-box rounded">
+              <div class="portfolio-img rounded">
+                <img class="img-fluid d-block" [src]="Environment +  o.ImageURL" alt="" />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-overlay-details">
+                    <h5 class="text-white fw-400">{{o.Title}}</h5>
+                    <span class="text-light">{{o.Category}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>

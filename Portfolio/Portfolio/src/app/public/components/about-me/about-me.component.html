@@ -1,0 +1,42 @@
+<section id="about" class="section">
+    <div class="container px-lg-5">
+      <!-- Heading -->
+      <div class="position-relative d-flex text-center mb-5">
+        <h2 class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0">
+          About Me
+        </h2>
+        <p class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0">
+          Know Me More<span
+            class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span>
+        </p>
+      </div>
+      <!-- Heading end-->
+
+      <div class="row gy-5">
+        <div class="col-lg-7 col-xl-8 text-center text-lg-start">
+          <h2 class="text-7 fw-600 mb-3">
+           {{PersonalDetails?.AboutMe.Title}}
+          </h2>
+          <p>
+            {{PersonalDetails?.AboutMe.Summary}}
+          </p>
+        </div>
+        <div class="col-lg-5 col-xl-4">
+          <div class="ps-lg-4">
+            <ul class="list-style-2">
+              <li class="">
+                <span class="fw-600 me-2">Name:</span> {{PersonalDetails?.UserDetail.FullName}}
+              </li>
+              <li class="">
+                <span class="fw-600 me-2">Email:</span><a href="mailto:{{PersonalDetails?.UserDetail?.Email}}">{{PersonalDetails?.UserDetail?.Email}}</a>
+              </li>
+              <li class="border-0">
+                <span class="fw-600 me-2">From:</span>{{PersonalDetails?.UserDetail?.City}} {{PersonalDetails?.UserDetail?.State}}
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary rounded-pill">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
